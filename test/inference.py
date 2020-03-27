@@ -2,12 +2,16 @@ import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
+from flask import Flask, render_template, request
+
 import numpy
 import tflearn
 import tensorflow
 import random
 import json
 import pickle
+
+app = Flask(__name__, template_folder='templates')
 
 with open("intents.json") as file:
     data = json.load(file)
